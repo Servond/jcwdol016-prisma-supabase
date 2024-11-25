@@ -23,7 +23,7 @@ export default class Server {
   }
 
   private routes() {
-    this.app.use("/", (req: Request, res: Response) => {
+    this.app.use("/api", (req: Request, res: Response) => {
       res.status(200).send("connected");
     });
     this.app.use("/auth", new AuthRoute().getRoute());
