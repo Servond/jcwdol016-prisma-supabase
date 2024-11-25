@@ -21,6 +21,9 @@ class Server {
         this.app.use(express_1.default.json());
     }
     routes() {
+        this.app.use("/", (req, res) => {
+            res.status(200).send("connected");
+        });
         this.app.use("/auth", new auth_route_1.default().getRoute());
     }
     start() {
