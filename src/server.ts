@@ -1,4 +1,4 @@
-import express, { Application } from "express";
+import express, { Application, Request, Response } from "express";
 import cors from "cors";
 import helmet from "helmet";
 import { PORT } from "./config/envConfig";
@@ -23,6 +23,9 @@ export default class Server {
   }
 
   private routes() {
+    this.app.use("/", (req: Request, res: Response) => {
+      res.status(200).send("connected");
+    });
     this.app.use("/auth", new AuthRoute().getRoute());
   }
 
