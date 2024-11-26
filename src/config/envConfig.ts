@@ -3,4 +3,4 @@ config({
   path: ".env",
 });
 
-export const { PORT } = process.env;
+export const { PORT, NODEMAILER_EMAIL, NODEMAILER_PASS } = process.env;
